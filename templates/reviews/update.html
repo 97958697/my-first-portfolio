@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}レビュー編集{% endblock %}
+
+{% block content %}
+<h1>レビュー編集</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">更新する</button>
+  <a href="{% url 'reviews:movie_detail' review.movie.pk %}">キャンセル</a>
+</form>
+{% endblock %}

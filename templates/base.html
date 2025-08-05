@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}映画レビューアプリ{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'movie_list' %}">ホーム</a>
+        {% if user.is_authenticated %}
+            <span>{{ user.username }}ログイン中</span>
+            <a href="{% url 'accounts:logout' %}">ログアウト</a>
+        {% else %}
+            <a href="{% url 'accounts:login' %}">ログイン</a>
+            <a href="{% url 'accounts:signup' %}">新規登録</a>
+        {% endif %}
+    </nav>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

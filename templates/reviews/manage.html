@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}レビュー管理{% endblock %}
+
+{% block content %}
+<h1>レビュー管理</h1>
+<p>
+  <a href="{% url 'reviews:movie_detail' movie.pk %}">映画詳細へ戻る</a>
+  |
+  <a href="{% url 'reviews:movie_list' %}">映画一覧へ戻る</a>
+</p>
+<h2>{{ movie.title }}</h2>
+{% if reviews %}
+  <ul>
+  {% for review in reviews %}
+    <li>
+      <strong>評価:</strong> {{ review.rating }}<br>
+      <strong>コメント:</strong> {{ review.comment|linebreaksbr }}
+      <div>
+        <form method="post" action="{% url 'reviews:delete' review.id %}" style="display:inline;">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">削除する</button>
+        </form>
+        <a href="{% url 'reviews:manage' movie.pk %}" class="btn btn-secondary">キャンセル</a>
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+{% else %}
+  <p>投稿したレビューはありません。</p>
+{% endif %}
+{% endblock %}

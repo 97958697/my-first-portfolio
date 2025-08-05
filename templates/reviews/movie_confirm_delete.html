@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}映画削除確認{% endblock %}
+
+{% block content %}
+<h1>映画削除確認</h1>
+<div class="movie-card">
+  {% if object.image %}
+    <img src="{{ object.image.url }}" alt="{{ object.title }}" style="max-width:200px;">
+  {% endif %}
+  <h2>{{ object.title }}</h2>
+  <p>公開日: {{ object.release_date }}</p>
+  <p>{{ object.description|truncatechars:200 }}</p>
+</div>
+<p>本当にこの映画を削除してよろしいですか？</p>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">削除する</button>
+  <a href="{% url 'reviews:movie_list' %}" class="btn btn-secondary">キャンセル</a>
+</form>
+{% endblock %}
