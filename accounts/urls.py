@@ -1,1 +1,6 @@
-from django.urls import path\nfrom . import views\n\nurlpatterns = []
+from django.urls import path
+from . import views
+
+app_name = 'accounts'
+
+urlpatterns = []
