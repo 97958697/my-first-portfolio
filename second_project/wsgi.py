@@ -8,9 +8,20 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
 """
 
 import os
+import sys
+
+# add project root to sys.path
+project_home = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if project_home not in sys.path:
+    sys.path.insert(0, project_home)
+
+# activate virtualenv
+activate_env = os.path.expanduser('~/portfolio/venv/bin/activate_this.py')
+with open(activate_env) as f:
+    exec(f.read(), {'__file__': activate_env})
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'first_project.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'second_project.settings')
 
 application = get_wsgi_application()
