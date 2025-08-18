@@ -26,8 +26,16 @@ def create(request, movie_id):
             review = form.save(commit=False)
             review.movie = movie
             review.user = request.user
-            review.save()
-            # レビュー投稿後は映画詳細ページに戻す
+            # 既存のレビューがあれば更新、なければ新規作成
+            existing = Review.objects.filter(user=request.user, movie=movie).first()
+            if existing:
+                existing.rating = review.rating
+                existing.comment = review.comment
+                existing.save()
+                review = existing
+            else:
+                review.save()
+            # 投稿後は映画詳細ページへリダイレクト
             return redirect('reviews:movie_detail', review.pk)
     else:
         form = ReviewForm()
