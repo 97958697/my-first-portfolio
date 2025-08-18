@@ -3,7 +3,6 @@ from .models import Review, Movie
 from django.utils import timezone
 
 class ReviewForm(forms.ModelForm):
-    clear_comment = forms.BooleanField(required=False, label='コメントを削除')
     class Meta:
         model = Review
         fields = ['rating', 'comment']

@@ -6,7 +6,8 @@
 <h1>{{ movie.title }} - レビューを書く</h1>
 <form method="post">
   {% csrf_token %}
-  {{ form.as_p }}
+  <p>{{ form.rating.label_tag }} {{ form.rating }}</p>
+  <p>{{ form.comment.label_tag }} {{ form.comment }}</p>
   <button type="submit" class="btn btn-primary">投稿</button>
 </form>
 {% endblock %}
