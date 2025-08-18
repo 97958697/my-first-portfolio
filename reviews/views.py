@@ -27,7 +27,8 @@ def create(request, movie_id):
             review.movie = movie
             review.user = request.user
             review.save()
-            return redirect('reviews:detail', review_id=review.id)
+            # レビュー投稿後は映画詳細ページに戻す
+            return redirect('reviews:movie_detail', review.pk)
     else:
         form = ReviewForm()
     return render(request, 'reviews/create.html', {'form': form, 'movie': movie})
