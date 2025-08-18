@@ -45,6 +45,11 @@ def delete(request, review_id):
 def update(request, review_id):
     review = get_object_or_404(Review, pk=review_id, user=request.user)
     if request.method == 'POST':
+        action = request.POST.get('action')
+        if action == 'delete_comment':
+            review.comment = ''
+            review.save()
+            return redirect('reviews:movie_detail', pk=review.movie.pk)
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
             form.save()
