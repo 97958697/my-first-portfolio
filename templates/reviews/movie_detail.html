@@ -15,11 +15,14 @@
     <h2>レビュー</h2>
     <ul>
     {% for review in movie.reviews.all %}
-        <li>
-            {{ review.user.username }}: {{ review.rating }} - "{{ review.comment }}"
+        <li style="margin-bottom:1em;">
+            <strong>{{ review.user.username }}: (評価点){{ review.rating }}</strong>
             {% if user.is_authenticated and review.user == user %}
                 <a href="{% url 'reviews:update' review.id %}">編集</a>
             {% endif %}
+            <div style="border:1px solid #ccc; padding:8px; margin-top:5px;">
+                {{ review.comment }}
+            </div>
         </li>
     {% empty %}
         <li>No reviews yet.</li>
