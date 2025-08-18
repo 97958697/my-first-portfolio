@@ -16,6 +16,7 @@
         <img src="{% static 'images/default_poster.jpg' %}" alt="No Image">
       {% endif %}
       <h2>{{ movie.title }}</h2>
+      <p><a href="{% url 'reviews:movie_detail' movie.pk %}">映画詳細ページ</a></p>
       <div class="btn-group">
         <a class="btn btn-detail" href="{% url 'reviews:movie_detail' movie.pk %}">詳細を見る</a>
         {% if user.is_staff %}
