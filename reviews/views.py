@@ -76,6 +76,9 @@ def manage(request, movie_id):
 # Movie Views
 class MovieListView(ListView):
     model = Movie
+    paginate_by = 9
+    paginate_by = 9
+    paginate_by = 9
     template_name = 'reviews/movie_list.html'
     context_object_name = 'movies'
 
