@@ -4,6 +4,9 @@
 
 {% block content %}
 <h1>映画一覧</h1>
+{% if user.is_staff %}
+  <p><a class="btn btn-secondary" href="{% url 'admin:index' %}" target="_blank">管理サイトへ</a></p>
+{% endif %}
 <div class="movie-grid">
   {% for movie in movies %}
     <div class="movie-card">
