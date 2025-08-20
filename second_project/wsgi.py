@@ -15,10 +15,6 @@ project_home = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if project_home not in sys.path:
     sys.path.insert(0, project_home)
 
-# activate virtualenv
-activate_env = os.path.expanduser('~/portfolio/venv/bin/activate_this.py')
-with open(activate_env) as f:
-    exec(f.read(), {'__file__': activate_env})
 
 from django.core.wsgi import get_wsgi_application
 
