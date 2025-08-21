@@ -24,6 +24,7 @@ from reviews.views import MovieListView
 urlpatterns = [
     path('', MovieListView.as_view(), name='movie_list'),
     path('detail/', TemplateView.as_view(template_name='mock_detail.html'), name='mock_detail'),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
     path('reviews/', include('reviews.urls')),
     path('admin/', admin.site.urls),
