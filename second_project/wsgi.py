@@ -11,6 +11,12 @@ import os
 import sys
 
 # add project root to sys.path
+# 仮想環境を有効化
+activate_env = os.path.expanduser('~/portfolio/venv/bin/activate_this.py')
+with open(activate_env) as f:
+    exec(f.read(), {'__file__': activate_env})
+
+# add project root to sys.path
 project_home = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if project_home not in sys.path:
     sys.path.insert(0, project_home)
@@ -18,6 +24,10 @@ if project_home not in sys.path:
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'second_project.settings')
+# set environment variable to tell django where your settings.py is
+os.environ.setdefault(
+    'DJANGO_SETTINGS_MODULE',
+    'second_project.settings'
+)
 
 application = get_wsgi_application()
