@@ -11,10 +11,6 @@ import os
 import sys
 
 # add project root to sys.path
-# 仮想環境を有効化
-activate_env = os.path.expanduser('~/portfolio/venv/bin/activate_this.py')
-with open(activate_env) as f:
-    exec(f.read(), {'__file__': activate_env})
 
 # add project root to sys.path
 project_home = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
