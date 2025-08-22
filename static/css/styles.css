@@ -76,4 +76,10 @@ nav a {
 /* フォーム */
 form {
   margin: 20px;
+/* 映画一覧ポスター統一サイズ */
+.movie-poster {
+  width: 300px;
+  height: 450px;
+  object-fit: cover;
+}
 }

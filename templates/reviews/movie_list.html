@@ -6,6 +6,7 @@
     {% for movie in movies %}
       <li>
         <a href="{% url 'reviews:detail' movie.id %}">
+          <img src="{{ movie.image.url }}" class="movie-poster" alt="{{ movie.title }} poster">
           {{ movie.title }}
         </a>
       </li>
