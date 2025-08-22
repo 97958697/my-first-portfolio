@@ -6,9 +6,9 @@
 </head>
 <body>
   {% if user.is_authenticated %}
-    <p>ようこそ {{ user.username }} | <a href="{% url 'logout' %}">ログアウト</a></p>
+    <p>ようこそ {{ user.username }} | <a href="{% url 'accounts:logout' %}">ログアウト</a></p>
   {% else %}
-    <p><a href="{% url 'login' %}">ログイン</a> | <a href="{% url 'signup' %}">サインアップ</a></p>
+    <p><a href="{% url 'accounts:login' %}">ログイン</a> | <a href="{% url 'accounts:signup' %}">サインアップ</a></p>
   {% endif %}
   <hr>
   {% block content %}{% endblock content %}
