@@ -58,8 +58,8 @@ h2 {
  
 /* 映画詳細ページ ポスター画像 */
 .movie-detail-poster {
-  width: 600px;
-  height: 450px;
+  width: 20%;
+  height: auto;
   object-fit: cover;
   display: block;
   margin: 0 auto;
