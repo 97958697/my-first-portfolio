@@ -59,6 +59,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+            BASE_DIR / 'portfolio' / '01_URLDispatch' / 'first_project' / 'templates',
             BASE_DIR / 'templates',
         ],
         'APP_DIRS': True,
