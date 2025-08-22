@@ -89,3 +89,22 @@ form {
   height: auto;
   object-fit: cover;
 }
+
+/* レイアウト修正 for movie list */
+.movie-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.movie-card {
+  margin: 0;
+}
+.movie-poster {
+  max-width: 200px;
+  height: auto;
+}
+.admin-link {
+  margin-top: 1rem;
+}
