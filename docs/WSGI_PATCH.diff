@@ -1,24 +1,20 @@
 --- /var/www/griko_pythonanywhere_com_wsgi.py
 +++ /var/www/griko_pythonanywhere_com_wsgi.py
-@@ -1,5 +1,7 @@
--# /home/griko/portfolio/home/griko/portfolio has been auto-generated for your Django project
--# (additional auto-generated comment lines...)
+@@ -1,7 +1,11 @@
 -import os, sys
 -project_home = '/home/griko/portfolio/home/griko/portfolio'
--sys.path.insert(0, project_home)
--os.environ.setdefault('DJANGO_SETTINGS_MODULE','second_project.settings')
--from django.core.wsgi import get_wsgi_application
--application = get_wsgi_application()
 +import os, sys
-+project_home = '/home/griko/portfolio'
-+sys.path.insert(0, project_home)
-+os.environ.setdefault('DJANGO_SETTINGS_MODULE','second_project.settings')
-+from django.core.wsgi import get_wsgi_application
-+application = get_wsgi_application()
- 
--# 仮想環境を有効化
--activate_env = os.path.expanduser('~/portfolio/venv/bin/activate_this.py')
--with open(activate_env) as f:
--    exec(f.read(), {'__file__': activate_env})
--
-``` 
+
++# 仮想環境を有効化
++activate_env = os.path.expanduser('~/portfolio/venv/bin/activate_this.py')
++with open(activate_env) as f:
++    exec(f.read(), {'__file__': activate_env})
+
+ project_home = '/home/griko/portfolio'
+ sys.path.insert(0, project_home)
+ os.environ.setdefault('DJANGO_SETTINGS_MODULE','second_project.settings')
+@@ -9,6 +13,7 @@
+ from django.core.wsgi import get_wsgi_application
+ application = get_wsgi_application()
++
++# End of WSGI setup
