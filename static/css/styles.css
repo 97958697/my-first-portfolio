@@ -1,6 +1,7 @@
 /* ベーススタイル */
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
   margin: 0;
   padding: 0;
   background-color: #f8f9fa;
@@ -16,6 +17,12 @@ nav a {
   color: #fff;
   margin-right: 10px;
   text-decoration: none;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
 }
 
 /* 映画一覧グリッド */
@@ -76,4 +83,9 @@ nav a {
 /* フォーム */
 form {
   margin: 20px;
+}
+.movie-poster {
+  height: 33.33%;
+  width: auto;
+  object-fit: cover;
 }
