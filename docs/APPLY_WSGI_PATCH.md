@@ -12,7 +12,7 @@
 
 3. 先ほど移動したパッチファイルを使って、WSGI 設定を修正する  
    ```
-   patch griko_pythonanywhere_com_wsgi.py < ~/portfolio/01_URLDispatch/first_project/docs/WSGI_PATCH.diff
+   patch griko_pythonanywhere_com_wsgi.py < ~/portfolio/docs/WSGI_PATCH.diff
    ```  
    - `patch` コマンドは元のファイルを書き換える命令  
    - パッチファイルは `~/portfolio/01_URLDispatch/first_project/docs/WSGI_PATCH.diff` にあります  

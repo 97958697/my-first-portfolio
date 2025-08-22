@@ -14,7 +14,6 @@ urlpatterns = [
     path('manage/<int:movie_id>/', views.manage, name='manage'),
     # Review URLs
     path('', views.index, name='index'),
-    path('<int:review_id>/', views.detail, name='detail'),
     path('create/<int:movie_id>/', views.create, name='create'),
     path('delete/<int:review_id>/', views.delete, name='delete'),
     path('update/<int:review_id>/', views.update, name='update'),
