@@ -8,9 +8,8 @@
   <ul class="movie-list">
     {% for movie in movies %}
       <li class="movie-card">
-        <a href="{% url 'reviews:movie_detail' movie.id %}">
-          <img src="{{ movie.image.url }}" class="movie-poster" alt="{{ movie.title }} poster">
-        </a>
+        <img src="{{ movie.image.url }}" class="movie-poster" alt="{{ movie.title }} poster">
+        <a href="{% url 'reviews:movie_detail' movie.id %}" class="detail-btn">(映画詳細へ)</a>
         <a href="{% url 'reviews:movie_detail' movie.id %}" class="btn btn-link movie-title">{{ movie.title }}</a>
       </li>
     {% endfor %}
