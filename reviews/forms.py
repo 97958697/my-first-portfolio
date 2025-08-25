@@ -3,6 +3,10 @@ from .models import Review, Movie
 from django.utils import timezone
 
 class ReviewForm(forms.ModelForm):
+    rating = forms.ChoiceField(
+        choices=[(i, str(i)) for i in range(1, 6)],
+        label='Rating'
+    )
     class Meta:
         model = Review
         fields = ['rating', 'comment']
