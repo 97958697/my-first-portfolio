@@ -44,14 +44,6 @@ h2 {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   text-align: center;
 }
-.movie-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  aspect-ratio: 2/3;
-  display: block;
-  margin: 0 auto;
-}
 .movie-card h2 {
   margin: 10px;
   font-size: 1.2rem;
@@ -91,19 +83,21 @@ form {
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 350px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 300px;
   gap: 1rem;
   justify-items: center;
 }
 .movie-card {
   margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 .movie-poster {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  aspect-ratio: 2/3;
 }
 .admin-link {
   margin-top: 1rem;
