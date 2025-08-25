@@ -20,6 +20,7 @@ nav a {
 }
 h1 {
   font-size: 2rem;
+  text-align: center;
 }
 h2 {
   font-size: 1.5rem;
@@ -101,4 +102,10 @@ form {
 }
 .admin-link {
   margin-top: 1rem;
+}
+
+/* ユーザー情報を中央揃え */
+.user-info {
+  text-align: center;
+  margin: 1rem 0;
 }
