@@ -48,6 +48,7 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  aspect-ratio: 2/3;
   display: block;
   margin: 0 auto;
 }
@@ -102,6 +103,7 @@ form {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  aspect-ratio: 2/3;
 }
 .admin-link {
   margin-top: 1rem;
