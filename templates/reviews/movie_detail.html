@@ -6,7 +6,7 @@
 {% block content %}
 <h1>{{ movie.title }}</h1>
 <p>{{ movie.description }}</p>
-<p><a href="{% url 'reviews:movie_list' %}">映画一覧へ戻る</a></p>
+<p><a href="{% url 'reviews:movie_list' %}" class="btn btn-secondary">映画一覧へ戻る</a></p>
 
 {% if movie.image %}
     <img src="{{ movie.image.url }}" alt="{{ movie.title }}" class="movie-detail-poster">
@@ -19,7 +19,7 @@
     <li style="margin-bottom:1em;">
         <strong>{{ review.user.username }}: (Rating){{ review.rating }}</strong>
         {% if user.is_authenticated and review.user == user %}
-            <a href="{% url 'reviews:update' review.id %}">編集</a>
+            <a href="{% url 'reviews:update' review.id %}" class="btn btn-secondary btn-sm">編集</a>
         {% endif %}
         <div style="border:1px solid #ccc; padding:8px; margin-top:5px;">
             {{ review.comment }}
@@ -31,6 +31,6 @@
 </ul>
 
 {% if user.is_authenticated %}
-    <a href="{% url 'reviews:create' movie.pk %}">レビューを書く</a>
+    <a href="{% url 'reviews:create' movie.pk %}" class="btn btn-primary">レビューを書く</a>
 {% endif %}
 {% endblock content %}

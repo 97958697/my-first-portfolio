@@ -3,7 +3,7 @@
 {% block content %}
   <h1>映画一覧</h1>
   <div class="admin-link">
-    <a href="{% url 'admin:index' %}" target="_blank" rel="noopener">管理サイトへ</a>
+    <a class="btn btn-secondary" href="{% url 'admin:index' %}" target="_blank" rel="noopener">管理サイトへ</a>
   </div>
   <ul class="movie-list">
     {% for movie in movies %}
