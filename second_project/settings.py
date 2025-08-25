@@ -58,10 +58,7 @@ ROOT_URLCONF = 'second_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / 'portfolio' / '01_URLDispatch' / 'first_project' / 'templates',
-            BASE_DIR / 'templates',
-        ],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
