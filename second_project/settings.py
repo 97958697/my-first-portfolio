@@ -126,6 +126,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
+    # Root static (PythonAnywhere の ~/portfolio/static)
+    BASE_DIR.parent / 'static',
     # App static (first_project/static)
     BASE_DIR / 'static',
 ]
