@@ -51,9 +51,9 @@ h2 {
 
 /* 映画詳細ページ ポスター画像 */
 .movie-detail-poster {
-  /* 2倍サイズ */
-  width: 120%;
-  height: auto;
+  /* 高さを半分に統一 */
+  height: 50%;
+  width: auto;
   object-fit: cover;
   display: block;
   margin: 0 auto;
