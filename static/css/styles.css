@@ -122,3 +122,16 @@ form {
   text-align: center;
   margin: 1rem 0;
 }
+/* 映画詳細へ ボタンスタイル */
+.detail-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 5px;
+}
+.detail-btn:hover {
+  background-color: #0056b3;
+}
