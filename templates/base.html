@@ -5,6 +5,18 @@
   <meta charset="UTF-8">
   <title>{% block title %}ムービーレビュー{% endblock title %}</title>
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <style>
+    /* 映画詳細へボタン強制表示スタイル */
+    .detail-btn {
+      display: inline-block !important;
+      padding: 6px 12px !important;
+      background-color: #007bff !important;
+      color: #fff !important;
+      border-radius: 4px !important;
+      text-decoration: none !important;
+      margin-top: 5px !important;
+    }
+  </style>
 </head>
 <body>
   {% if user.is_authenticated %}
