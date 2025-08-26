@@ -125,3 +125,12 @@ form {
   text-align: center;
   margin: 1rem 0;
 }
+
+/* 映画タイトルをポスター下に表示 */
+.movie-title {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #343a40;
+}
