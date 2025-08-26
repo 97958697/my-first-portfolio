@@ -35,7 +35,6 @@ h2 {
   grid-auto-rows: 350px;
   max-width: 100%;
 }
-/* Removed responsive breakpoints to enforce 3 columns on all screens */
 
 /* 映画カード */
 .movie-card {
@@ -49,7 +48,7 @@ h2 {
   margin: 10px;
   font-size: 1.2rem;
 }
- 
+
 /* 映画詳細ページ ポスター画像 */
 .movie-detail-poster {
   width: 60%;
@@ -71,8 +70,9 @@ h2 {
   cursor: pointer;
 }
 .btn-primary { background-color: #007bff; }
-.btn-danger { background-color: #dc3545; }
+.btn-danger   { background-color: #dc3545; }
 .btn-secondary { background-color: #6c757d; }
+
 /* 映画詳細へ ボタン */
 .detail-btn {
   display: inline-block;
@@ -121,17 +121,4 @@ form {
 .user-info {
   text-align: center;
   margin: 1rem 0;
-}
-/* 映画詳細へ ボタンスタイル */
-.detail-btn {
-  display: inline-block;
-  padding: 6px 12px;
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 4px;
-  text-decoration: none;
-  margin-top: 5px;
-}
-.detail-btn:hover {
-  background-color: #0056b3;
 }
