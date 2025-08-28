@@ -274,11 +274,9 @@ form {
   align-self: center;
 }
 /* レビュー投稿ページ ボタンサイズ調整 */
-.review-create-container form button.btn-primary {
-  width: 120px;
-  box-sizing: border-box;
-}
+.review-create-container form button.btn-primary,
 .review-create-container form .cancel-btn {
-  width: 60px;
+  width: 120px;
+  height: 36px;
   box-sizing: border-box;
 }
