@@ -6,14 +6,12 @@
   <form method="post">
     {% csrf_token %}
     <div class="signup-field">
--        {{ form.username.label_tag }}<br>
--        {{ form.username }}<br>
-+        {{ form.username.label_tag }}<br>
-+        <input type="text" name="{{ form.username.name }}" id="{{ form.username.id_for_label }}" maxlength="15" value="{{ form.username.value|default_if_none:'' }}"> <br>
+       {{ form.username }}<br>
+       {{ form.username.label_tag }}<br>
+       <input type="text" name="{{ form.username.name }}" id="{{ form.username.id_for_label }}" maxlength="15" value="{{ form.username.value|default_if_none:'' }}"> <br>
       <small class="help-text">
         この項目は必須です。<br>
--          半角アルファベット、半角数字、@/./+/-/_ で150文字以下にしてください。
-+          半角アルファベット、半角数字、@/./+/-/_ で15文字以内にしてください。
+半角アルファベット、半角数字、@/./+/-/_ で15文字以内にしてください。
       </small>
     </div>
     <div class="signup-field">
