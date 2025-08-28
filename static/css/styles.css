@@ -218,14 +218,16 @@ form {
 .signup-container .signup-field small.help-text {
   text-align: center;
 }
+/* Sign-up input fields sizing: username and password inputs match dimensions */
+.signup-container .signup-field input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 36px;
+}
 /* 新規登録画面：最上部のユーザー名入力欄を非表示 */
-.signup-container .signup-field:first-of-type input {
-  display: none;
-}
+/* Removed rule that hid the username field to ensure it is displayed */
 /* 新規登録画面：最上部の入力欄に最大30文字制限 */
-.signup-container .signup-field:first-of-type input[maxlength] {
-  max-length: 30;
-}
+/* Removed incorrect maxlength rule on first-of-type input */
 
 .signup-container form button {
   align-self: center;
