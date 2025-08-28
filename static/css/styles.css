@@ -274,8 +274,9 @@ form {
   margin: 0.5rem;
   align-self: center;
 }
-/* キャンセルボタンを投稿ボタンと同じ幅に設定 */
-.review-create-container form button,
+/* キャンセルボタンを投稿ボタンと同じ幅に統一 */
+.review-create-container form button.btn-primary,
 .review-create-container form .cancel-btn {
-  min-width: 120px;
+  width: 100px;
+  box-sizing: border-box;
 }
