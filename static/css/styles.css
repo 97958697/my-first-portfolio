@@ -217,6 +217,7 @@ form {
 
 .signup-container .signup-field small.help-text {
   text-align: center;
+}
 /* 新規登録画面：最上部のユーザー名入力欄を非表示 */
 .signup-container .signup-field:first-of-type input {
   display: none;
