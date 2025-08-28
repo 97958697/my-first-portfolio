@@ -206,9 +206,16 @@ form {
   max-width: 400px;
 }
 
-.signup-container form p {
+/* 各フィールドを1行ずつ中央揃え */
+.signup-container .signup-field {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 1rem;
+}
+
+.signup-container .signup-field small.help-text {
   text-align: center;
 }
 
