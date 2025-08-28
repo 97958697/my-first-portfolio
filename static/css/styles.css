@@ -145,3 +145,43 @@ form {
   font-size: 1rem;
   color: #343a40;
 }
+/* ログインページ中央揃え */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+}
+
+.login-container form > div {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.login-container form label {
+  display: block;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.login-container form input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-container form button {
+  align-self: center;
+}

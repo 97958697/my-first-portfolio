@@ -3,6 +3,7 @@
 {% block title %}ログイン{% endblock %}
 
 {% block content %}
+  <div class="login-container">
   <h2>ログイン</h2>
   <form method="post">
     {% csrf_token %}
@@ -16,4 +17,5 @@
     </div>
     <button type="submit">ログイン</button>
   </form>
+  </div>
 {% endblock %}
