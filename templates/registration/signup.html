@@ -5,7 +5,28 @@
   <h2>新規登録</h2>
   <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    <div class="signup-field">
+      {{ form.username.label_tag }}<br>
+      {{ form.username }}<br>
+      <small class="help-text">
+        この項目は必須です。<br>
+        半角アルファベット、半角数字、@/./+/-/_ で150文字以下にしてください。
+      </small>
+    </div>
+    <div class="signup-field">
+      {{ form.password1.label_tag }}<br>
+      {{ form.password1 }}<br>
+      {% if form.password1.help_text %}
+      <small class="help-text">{{ form.password1.help_text }}</small>
+      {% endif %}
+    </div>
+    <div class="signup-field">
+      {{ form.password2.label_tag }}<br>
+      {{ form.password2 }}<br>
+      <small class="help-text">
+        確認のため、再度パスワードを入力してください。
+      </small>
+    </div>
     <button type="submit">登録</button>
   </form>
   </div>
