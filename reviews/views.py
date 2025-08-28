@@ -87,6 +87,15 @@ class MovieDetailView(DetailView):
     template_name = 'reviews/movie_detail.html'
     context_object_name = 'movie'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        # 投稿済みユーザーにはレビューを書くボタンを隠すフラグ
+        context['has_review'] = False
+        if user.is_authenticated:
+            context['has_review'] = Review.objects.filter(user=user, movie=self.object).exists()
+        return context
+
 class MovieCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = Movie
     form_class = MovieForm
