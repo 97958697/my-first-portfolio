@@ -61,8 +61,6 @@ TEMPLATES = [
         'DIRS': [
             # Local app templates
             BASE_DIR / 'templates',
-            # PythonAnywhere root templates
-            BASE_DIR.parent.parent / 'templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
