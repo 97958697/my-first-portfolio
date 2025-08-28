@@ -6,6 +6,7 @@
   <div class="login-container">
   <h2>ログイン</h2>
   <form method="post">
+    {% csrf_token %}
     {% if form.non_field_errors %}
       <div class="login-error">
         {% for error in form.non_field_errors %}
@@ -13,7 +14,11 @@
         {% endfor %}
       </div>
     {% endif %}
-    {% csrf_token %}
+    {% for field in form %}
+      {% for error in field.errors %}
+        <p style="color: #dc3545;">{{ error }}</p>
+      {% endfor %}
+    {% endfor %}
     <div>
       {{ form.username.label_tag }}<br>
       {{ form.username }}
