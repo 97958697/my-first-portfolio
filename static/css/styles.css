@@ -226,7 +226,6 @@ form {
 .signup-container .signup-field:first-of-type input[maxlength] {
   max-length: 30;
 }
-}
 
 .signup-container form button {
   align-self: center;
@@ -237,7 +236,6 @@ form {
   flex-direction: column;
   align-items: center;
   margin: 2rem 0;
-}
 
 .review-create-container h1 {
   text-align: center;
@@ -275,9 +273,12 @@ form {
   margin: 0.5rem;
   align-self: center;
 }
-/* キャンセルボタンを投稿ボタンと同じ幅に統一 */
-.review-create-container form button.btn-primary,
+/* レビュー投稿ページ ボタンサイズ調整 */
+.review-create-container form button.btn-primary {
+  width: 120px;
+  box-sizing: border-box;
+}
 .review-create-container form .cancel-btn {
-  width: 100px;
+  width: 60px;
   box-sizing: border-box;
 }
