@@ -59,10 +59,10 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            # PythonAnywhere root templates
-            BASE_DIR.parent.parent / 'templates',
             # Local app templates
             BASE_DIR / 'templates',
+            # PythonAnywhere root templates
+            BASE_DIR.parent.parent / 'templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
