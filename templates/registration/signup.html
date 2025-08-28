@@ -16,9 +16,12 @@
     <div class="signup-field">
       {{ form.password1.label_tag }}<br>
       {{ form.password1 }}<br>
-      {% if form.password1.help_text %}
-      <small class="help-text">{{ form.password1.help_text }}</small>
-      {% endif %}
+      <small class="help-text">
+・あなたの個人情報と似ているパスワードにはできません。<br>
+・パスワードは最低8文字以上必要です。<br>
+・よく使われるパスワードにはできません。<br>
+・数字だけのパスワードにはできません。
+</small>
     </div>
     <div class="signup-field">
       {{ form.password2.label_tag }}<br>
