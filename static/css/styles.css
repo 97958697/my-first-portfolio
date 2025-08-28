@@ -236,6 +236,7 @@ form {
   flex-direction: column;
   align-items: center;
   margin: 2rem 0;
+}
 
 .review-create-container h1 {
   text-align: center;
@@ -274,9 +275,13 @@ form {
   align-self: center;
 }
 /* レビュー投稿ページ ボタンサイズ調整 */
-.review-create-container form button.btn-primary,
-.review-create-container form .cancel-btn {
+.review-create-container form button.btn-primary {
   width: 120px;
   height: 36px;
+  box-sizing: border-box;
+}
+.review-create-container form .cancel-btn {
+  width: 60px;
+  height: 18px;
   box-sizing: border-box;
 }
