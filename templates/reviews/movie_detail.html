@@ -30,7 +30,7 @@
 {% endfor %}
 </ul>
 
-{% if user.is_authenticated %}
+{% if user.is_authenticated and not movie.reviews.filter(user=user).exists %}
     <a href="{% url 'reviews:create' movie.pk %}" class="btn btn-primary">レビューを書く</a>
 {% endif %}
 {% endblock content %}
