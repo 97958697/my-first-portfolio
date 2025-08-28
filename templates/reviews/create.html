@@ -3,6 +3,7 @@
 {% block title %}レビュー投稿{% endblock %}
 
 {% block content %}
+  <div class="review-create-container">
 <h1>{{ movie.title }} - レビューを書く</h1>
 <form method="post">
   {% csrf_token %}
@@ -11,4 +12,5 @@
   <button type="submit" class="btn btn-primary">投稿</button>
   <a href="{% url 'reviews:movie_detail' movie.id %}" class="btn btn-secondary cancel-btn">キャンセル</a>
 </form>
+  </div>
 {% endblock %}
