@@ -217,6 +217,14 @@ form {
 
 .signup-container .signup-field small.help-text {
   text-align: center;
+/* 新規登録画面：最上部のユーザー名入力欄を非表示 */
+.signup-container .signup-field:first-of-type input {
+  display: none;
+}
+/* 新規登録画面：最上部の入力欄に最大30文字制限 */
+.signup-container .signup-field:first-of-type input[maxlength] {
+  max-length: 30;
+}
 }
 
 .signup-container form button {

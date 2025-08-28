@@ -6,7 +6,7 @@
   <form method="post">
     {% csrf_token %}
     <div class="signup-field">
-       {{ form.username }}<br>
+       {# 削除: 二重表示される自動入力欄 #}
        {{ form.username.label_tag }}<br>
        <input type="text" name="{{ form.username.name }}" id="{{ form.username.id_for_label }}" maxlength="15" value="{{ form.username.value|default_if_none:'' }}"> <br>
       <small class="help-text">
