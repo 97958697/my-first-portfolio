@@ -118,3 +118,7 @@ class MovieDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     success_url = reverse_lazy('reviews:movie_list')
     def test_func(self):
         return self.request.user.is_staff
+
+def custom_404_view(request, exception):
+    """カスタム404エラーページ表示ビュー"""
+    return render(request, '404.html', status=404)
