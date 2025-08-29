@@ -122,10 +122,12 @@ form {
   overflow: hidden;
 }
 .movie-poster {
-  /* 2倍サイズ */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    /* 正方形サイズに統一 */
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
 .admin-link {
   margin-top: 1rem;
@@ -238,12 +240,6 @@ form {
   flex-direction: column;
   align-items: center;
   margin: 2rem 0;
-/* レビュー編集画面のボタンを横並びに */
-.review-actions {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-}
 }
 
 .review-create-container h1 {
@@ -297,4 +293,11 @@ form {
   box-sizing: border-box;
   padding: 0;
   font-size: 12px;
+}
+
+/* レビュー編集画面のボタンを横並びに */
+.review-create-container .review-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
 }
