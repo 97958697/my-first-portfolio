@@ -16,7 +16,7 @@
     <ul>
     {% for review in movie.reviews.all %}
         <li>
-            {{ review.user.username }}: {{ review.rating }} - "{{ review.comment }}"
+            ({{ review.user.username }}: 評価{{ review.rating }}点) - 「{{ review.comment }}」
             {% if user.is_authenticated and review.user == user %}
                 <a href="{% url 'reviews:update' review.id %}">編集</a>
             {% endif %}
