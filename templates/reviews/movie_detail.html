@@ -1,38 +1,35 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <title>{{ movie.title }} - 詳細</title>
-</head>
-<body>
-    <h1>{{ movie.title }}</h1>
-    <p>{{ movie.description }}</p>
-    <p><a href="{% url 'reviews:movie_list' %}">映画一覧へ戻る</a></p>
-    {% if movie.image %}
-        <img class="movie-detail-poster" src="{{ movie.image.url }}" alt="{{ movie.title }}">
-    {% endif %}
-    <p>公開日: {{ movie.release_date }}</p>
+{% extends "base.html" %}
+{% block title %}{{ movie.title }} - 詳細{% endblock title %}
 
-    <h2>レビュー</h2>
-    <ul>
-    {% for review in movie.reviews.all %}
-        <li>
-            ({{ review.user.username }}: 評価{{ review.rating }}点)
-            <div style="border:1px solid #ccc; padding:8px; margin:4px 0;">
-              {{ review.comment }}
-            </div>
-            {% if user.is_authenticated and review.user == user %}
-                <a href="{% url 'reviews:update' review.id %}">編集</a>
-            {% endif %}
-        </li>
-    {% empty %}
-        <li>No reviews yet.</li>
-    {% endfor %}
-    </ul>
+{% block content %}
+<h1>{{ movie.title }}</h1>
+<p>{{ movie.description }}</p>
+<p><a href="{% url 'reviews:movie_list' %}">映画一覧へ戻る</a></p>
 
-    {% if user.is_authenticated and not has_review %}
-        <a href="{% url 'reviews:create' movie.pk %}">レビューを書く</a>
+{% if movie.image %}
+    <img class="movie-detail-poster" src="{{ movie.image.url }}" alt="{{ movie.title }}">
+{% endif %}
+
+<p>公開日: {{ movie.release_date }}</p>
+
+<h2>レビュー</h2>
+<ul>
+{% for review in movie.reviews.all %}
+  <li>
+    ({{ review.user.username }}: 評価{{ review.rating }}点)
+    <div style="border:1px solid #ccc; padding:8px; margin:4px 0;">
+      {{ review.comment }}
+    </div>
+    {% if user.is_authenticated and review.user == user %}
+      <a href="{% url 'reviews:update' review.id %}">編集</a>
     {% endif %}
-</body>
-</html>
+  </li>
+{% empty %}
+  <li>No reviews yet.</li>
+{% endfor %}
+</ul>
+
+{% if user.is_authenticated and not has_review %}
+  <a href="{% url 'reviews:create' movie.pk %}">レビューを書く</a>
+{% endif %}
+{% endblock content %}
