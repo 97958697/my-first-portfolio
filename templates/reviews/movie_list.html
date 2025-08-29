@@ -8,7 +8,10 @@
   <ul class="movie-list">
     {% for movie in movies %}
       <li class="movie-card">
+        {% if movie.image %}
+        {% if movie.image %}
         <a href="{% url 'reviews:movie_detail' movie.id %}">
+        {% endif %}
           <img src="{{ movie.image.url }}" class="movie-poster" alt="{{ movie.title }} poster">
         </a>
         <a href="{% url 'reviews:movie_detail' movie.id %}" class="btn btn-link movie-title">{{ movie.title }}</a>
