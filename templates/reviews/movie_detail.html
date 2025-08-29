@@ -18,7 +18,7 @@
         <li>
             ({{ review.user.username }}: 評価{{ review.rating }}点)
             <div style="border:1px solid #ccc; padding:8px; margin:4px 0;">
-              「{{ review.comment }}」
+              {{ review.comment }}
             </div>
             {% if user.is_authenticated and review.user == user %}
                 <a href="{% url 'reviews:update' review.id %}">編集</a>
