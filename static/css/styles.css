@@ -238,6 +238,12 @@ form {
   flex-direction: column;
   align-items: center;
   margin: 2rem 0;
+/* レビュー編集画面のボタンを横並びに */
+.review-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
 }
 
 .review-create-container h1 {
