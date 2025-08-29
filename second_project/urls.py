@@ -30,6 +30,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 handler404 = 'reviews.views.custom_404_view'
+# Serve media files in production and development
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -6,7 +6,7 @@
 <p>{{ movie.description }}</p>
 <p><a href="{% url 'reviews:movie_list' %}">映画一覧へ戻る</a></p>
 
-{% if movie.image %}
+{% if movie.image.name %}
     <img class="movie-detail-poster" src="{{ movie.image.url }}" alt="{{ movie.title }}">
 {% endif %}
 
