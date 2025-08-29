@@ -2,6 +2,7 @@
 {% block title %}レビュー編集{% endblock %}
 
 {% block content %}
+<div class="review-create-container">
 <h1>レビュー編集</h1>
 <form method="post">
   {% csrf_token %}
@@ -11,4 +12,5 @@
   <a href="{% url 'reviews:movie_detail' review.movie.pk %}" style="margin-left:1em;">キャンセル</a>
   <button type="submit" name="action" value="delete_review" style="margin-left:1em;">レビュー削除</button>
 </form>
+</div>
 {% endblock %}
