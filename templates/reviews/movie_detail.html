@@ -26,7 +26,7 @@
     {% endfor %}
     </ul>
 
-    {% if user.is_authenticated %}
+    {% if user.is_authenticated and not has_review %}
         <a href="{% url 'reviews:create' movie.pk %}">レビューを書く</a>
     {% endif %}
 </body>
