@@ -131,8 +131,8 @@ form {
 }
 .movie-detail-poster {
     /* 映画詳細画面のポスターを正方形に統一 */
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 600px;
     object-fit: cover;
     display: block;
     margin: 0 auto;
