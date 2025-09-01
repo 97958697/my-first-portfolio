@@ -4,10 +4,20 @@
   <div class="signup-container">
   <h2>新規登録</h2>
   <form method="post">
-    {% csrf_token %}
+      {% csrf_token %}
+      {% if form.non_field_errors %}
+      <ul class="errorlist">
+        {% for error in form.non_field_errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
     <div class="signup-field">
        {{ form.username.label_tag }}<br>
        <input type="text" name="{{ form.username.name }}" id="{{ form.username.id_for_label }}" maxlength="15" value="{{ form.username.value|default_if_none:'' }}"> <br>
+       {% for error in form.username.errors %}
+       <div class="error">{{ error }}</div>
+       {% endfor %}
       <small class="help-text">
         この項目は必須です。<br>
 半角アルファベット、半角数字、@/./+/-/_ で15文字以内にしてください。
@@ -16,6 +26,9 @@
     <div class="signup-field">
       {{ form.password1.label_tag }}<br>
       {{ form.password1 }}<br>
+      {% for error in form.password1.errors %}
+      <div class="error">{{ error }}</div>
+      {% endfor %}
       <small class="help-text">
 ・あなたの個人情報と似ているパスワードにはできません。<br>
 ・パスワードは最低8文字以上必要です。<br>
@@ -26,6 +39,9 @@
     <div class="signup-field">
       {{ form.password2.label_tag }}<br>
       {{ form.password2 }}<br>
+      {% for error in form.password2.errors %}
+      <div class="error">{{ error }}</div>
+      {% endfor %}
       <small class="help-text">
         確認のため、再度パスワードを入力してください。
       </small>
