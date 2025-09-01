@@ -124,6 +124,14 @@ form {
 .movie-poster {
     /* 正方形サイズに統一 */
     width: 300px;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+.movie-detail-poster {
+    /* 映画詳細画面のポスターを正方形に統一 */
+    width: 300px;
     height: 300px;
     object-fit: cover;
     display: block;
