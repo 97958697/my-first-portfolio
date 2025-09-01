@@ -309,3 +309,19 @@ form {
   justify-content: center;
   gap: 0.5rem;
 }
+
+/* 新規登録画面のエラー文字を赤表示 */
+.errorlist {
+  color: #dc3545;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+.errorlist li {
+  margin-bottom: 0.25rem;
+}
+.error {
+  color: #dc3545;
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+}
