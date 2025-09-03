@@ -30,6 +30,6 @@
 </ul>
 
 {% if user.is_authenticated and not has_review %}
-  <a href="{% url 'reviews:create' movie.pk %}">レビューを書く</a>
+  <a class="detail-btn" href="{% url 'reviews:create' movie.pk %}">レビューを書く</a>
 {% endif %}
 {% endblock content %}
