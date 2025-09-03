@@ -13,7 +13,7 @@
 <p>公開日: {{ movie.release_date }}</p>
 
 <h2>レビュー</h2>
-<ul>
+<ul style="list-style:none; padding-left:0;">
 {% for review in movie.reviews.all %}
   <li>
     ({{ review.user.username }}:評価{{ review.rating }}点)
